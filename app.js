@@ -38,6 +38,9 @@ app.get("/login/choose/postelec/new",function(req,res){
     res.render("newIssue")
 })
 
+app.get("/login/choose/candi",function(req,res){
+    res.render(candi)
+})
 // app.post("/login/choose/postelec",function(req,res){
 // Issue.findById(req.params.id,function(err,issue){
 //     if(err)
