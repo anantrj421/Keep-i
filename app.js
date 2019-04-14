@@ -3,8 +3,8 @@ var express=require('express'),
     mongoose    =require('mongoose'),
     app=express();
 
-var newIssue= require("./models/newissue")
-var Issue= require("./models/issues")
+// var newIssue= require("./models/newissue")
+// var Issue= require("./models/issues")
 
 // mongoose.connect("mongodb://localhost/keep_i");
 
@@ -29,7 +29,8 @@ app.get("/login/choose",function(req,res){
 })
 
 app.get("/login/choose/postelec",function(req,res){
-    res.render("postelec",{issue:Issue});
+    // res.render("postelec",{issue:Issue});
+    res.render("postelec")
 })
 
 
@@ -37,27 +38,27 @@ app.get("/login/choose/postelec/new",function(req,res){
     res.render("newIssue")
 })
 
-app.post("/login/choose/postelec",function(req,res){
-Issue.findById(req.params.id,function(err,issue){
-    if(err)
-    {
-        console.log(err)
-    }
-    else
-    {
-    newIssue.create(req.body.issue,function(err,newissue){
-    if(err){
-        console.log(err)
-    }
-    else{
-        newissue.save();
-        Issue.allissues.push(newissue)
-        Issue.save()
-        res.redirect("/login/choose/postelec")
-    }
-})
-}})
-})
+// app.post("/login/choose/postelec",function(req,res){
+// Issue.findById(req.params.id,function(err,issue){
+//     if(err)
+//     {
+//         console.log(err)
+//     }
+//     else
+//     {
+//     newIssue.create(req.body.issue,function(err,newissue){
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         newissue.save();
+//         Issue.allissues.push(newissue)
+//         Issue.save()
+//         res.redirect("/login/choose/postelec")
+//     }
+// })
+// }})
+// })
 
 PORT=8000;
 app.listen(PORT,function(){
