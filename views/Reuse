@@ -1,0 +1,17 @@
+<% campground.comments.forEach(function(comment){ %>
+                <div class="row">
+                    <strong><div class="col-md-9">
+                        <strong><%= comment.author.username %></strong>
+                        <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+                        <p>
+                            <%- comment.text %>
+                        </p>
+
+
+
+                            <!-- <% issue.allissues.forEach(function(issue){ %>
+                      <tr>
+                        <td><%- issue.text %></td>
+                        <td><button type="button" class="btn btn-lg btn-success">Add</button><p>+24 people</p></td>
+                      </tr>
+                      <% }) %> -->
